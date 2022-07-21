@@ -40,13 +40,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 #### Admin
  
 - ✔ Use drag and drop element from sidebar to content field. Currenly, there are paragraph and button.
-- ✔ Admin can change text inside paragraph, click on this element to active edit
-- ✔ Can change button name and set alert message, click on this element to active edit
-- ✔ Save button to save template to localstorage
-- ✔ View navigate to consumer page
-- ✔ Export to download template as html file
-- 🔺 Undo and Redo (not optimizing mechanism)
-- ❗ Import has not implemented
+- ✔ Admin can change text inside paragraph, `click` on this element to active edit
+- ✔ Can change button name and set alert message, `click` on this element to active edit
+- ✔ `Save` button to save template to localstorage
+- ✔ `View` navigate to consumer page
+- ✔ `Export` to download template as html file
+- 🔺 `Undo` and `Redo` (not optimizing mechanism)
+- ❗ `Import` has not implemented
 
 
 #### Consumer
