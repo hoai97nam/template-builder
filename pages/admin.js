@@ -106,7 +106,13 @@ export default function Admin() {
         setTxtEdit(false);
         setBtnEdit(false);
       } else {
-        x == "T" ? setTxtEdit(true) : setBtnEdit(true);
+        if (x === "T") {
+          setTxtEdit(true);
+          setBtnEdit(false);
+        } else {
+          setTxtEdit(false);
+          setBtnEdit(true);
+        }
         setId(index);
         setFocused(true);
       }
@@ -143,7 +149,6 @@ export default function Admin() {
         );
       }
     });
-  //
 
   const updateProp = (index, txt) => {
     const componentsUpdated = components.map((x) => {
