@@ -1,8 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Template builder
+
+This prototype depicts a template builder application with 2 elements: Text field and button.
 
 ## Getting Started
 
-First, run the development server:
+### Pre-install:
+
+- Git
+- node
+
+Open terminal or powershell, run command:
+
+```bash
+git clone https://github.com/hoai97nam/template-builder.git
+```
+to clone whole repo to local
+
+run 
+```bash
+npm intall
+```
+to install libraries used in application 
+
+Finally, run the development server:
 
 ```bash
 npm run dev
@@ -12,23 +32,53 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Description:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- There are two pages: admin to design template and consumer to show template after designed
 
-## Learn More
+#### Admin
+ 
+- ✔ Use drag and drop element from sidebar to content field. Currenly, there are paragraph and button.
+- ✔ Admin can change text inside paragraph, click on this element to active edit
+- ✔ Can change button name and set alert message, click on this element to active edit
+- ✔ Save button to save template to localstorage
+- ✔ View navigate to consumer page
+- ✔ Export to download template as html file
+- 🔺 Undo and Redo (not optimizing mechanism)
+- ❗ Import has not implemented
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Consumer
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- ✔ Show designed template
+- ✔ Back to admin page button
 
-## Deploy on Vercel
+## What I used
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Libraries or 3rd party
+- Ant design library for element like Button, Input, Tooltips, ...
+- Use styled-component library for css admin page
+- Use Drag and Drop library for drag and drop feature
+- Use hmtl js download to export template
+- Use uuid for generating uuid code
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Implementations
+- Use context to manage state. In case of being scalable, consider Redux in state managament
+- For Undo and Redo feature, use the array to save every change of component. Control index of history array to reflect undo and redo.
+- Manage component by id with format: <First letter of element name>-<uuid>, for instances:
+    - T-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX id of Paragraph component
+    - B-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX id of Button component
+- 2 different edit components for 2 elements
+- Add delete button
+
+## Ideas not include prototype:
+
+- Import template from outside the application using library convert html to React Component
+- Feature change order of elements directly by drag and drop
+- Use redux for state management in case of more than 2 elements (layout, align, radio button)
+- More attributes in every element (margin, padding, color, align, ...)
+- Recommend for text by providing key words. Scale to create create Resume application, email template builder application, ...  
+- Account management (sign in/sign up) to save individual template. Use backend or Cloud service to store (like firebase, Azure, AWS, ...)  
+
+
