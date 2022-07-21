@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import DraggableButtonComponent from "../components/DragButton";
-import DraggableComponent from "../components/DragText";
+import DraggableTextComponent from "../components/DragText";
 
 import React, { useCallback, useState } from "react";
 import { useDrop } from "react-dnd";
 import { DRAG_TYPES } from "../constants/DragTypes";
-import ComponentName from "../components/ComponentText";
-import ComponentButton from "../components/ComponentButton";
+import TextComponent from "../components/TextComponent";
+import ButtonComponent from "../components/ButtonComponent";
 import { v4 as uuid } from "uuid";
 import { useEffect } from "react";
 import fileDownload from "js-file-download";
@@ -121,7 +121,7 @@ export default function Admin() {
         // omit first condition
         //create new element with available component
         const NewComponent = React.createElement(
-          component.name == "ComponentButton" ? ComponentButton : ComponentName,
+          component.name == "ComponentButton" ? ButtonComponent : TextComponent,
           {
             // @TODO: Use a hash here?
             key: component.id,
@@ -252,7 +252,7 @@ export default function Admin() {
         </Row>
       </div>
       <div className="sidebar">
-        <DraggableComponent />
+        <DraggableTextComponent />
         <DraggableButtonComponent />
       </div>
       <div className="content" style={{ justifyContent: "center" }}>

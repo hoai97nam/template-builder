@@ -13,7 +13,14 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Template Builder!</a>
+          Welcome to{" "}
+          <a
+            href="https://github.com/hoai97nam/template-builder"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Template Builder!
+          </a>
         </h1>
 
         <p className={styles.description}>

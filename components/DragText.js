@@ -3,8 +3,10 @@ import { Card, Row, Col } from "antd";
 import { useDrag } from "react-dnd";
 import { DRAG_TYPES } from "../constants/DragTypes";
 import { MenuOutlined } from "@ant-design/icons";
-
-export default function DraggableComponent({ ...props }) {
+/*
+  Drag Paragraph Component
+*/
+export default function DraggableTextComponent({ ...props }) {
   const [, drag] = useDrag({
     item: {
       id: "ComponentText",
@@ -17,7 +19,11 @@ export default function DraggableComponent({ ...props }) {
       ref={drag}
       bordered={true}
       {...props}
-      style={{ border: "1px solid gray", margin: "0.5rem 0.5rem", borderRadius:'.5rem' }}
+      style={{
+        border: "1px solid gray",
+        margin: "0.5rem 0.5rem",
+        borderRadius: ".5rem",
+      }}
     >
       <Col span={24}>
         <Row align="center">

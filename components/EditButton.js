@@ -1,6 +1,8 @@
 import React from "react";
 import { Col, Row, Form, Button, Input } from "antd";
-
+/*
+    Edit button component
+*/
 export default function EditButton({
   handleBtnTxt,
   handleBtnAlert,

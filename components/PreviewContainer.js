@@ -1,5 +1,9 @@
 import React, { useCallback } from "react";
 import { Row } from "antd";
+
+/*
+  Component to wrap all children element
+*/
 export default function PreviewContainer({
   index,
   focused = false,

@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "antd";
 
-export default function ComponentButton({ name, props }) {
+export default function ButtonComponent({ name, props }) {
   const buttonClick = () => {
     alert(props.message ? props.message : "default alert");
   };

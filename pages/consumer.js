@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import ComponentButton from "../components/ComponentButton";
-import ComponentName from "../components/ComponentText";
+import ButtonComponent from "../components/ButtonComponent";
+import TextComponent from "../components/TextComponent";
 import PreviewContainer from "../components/PreviewContainer";
 import { useComponents } from "../contexts/ComponentContext";
 import { Button } from "antd";
@@ -11,13 +11,20 @@ import { useRouter } from "next/router";
 export default function Consumer() {
   const { components, setComponents } = useComponents();
   const router = useRouter();
+  /*
+  If admin saved template before, 
+  consumer will check from local storage in the first 
+  consumer page renders.
 
-  useEffect(()=>{
+  It will load if some data exists from local storage
+
+*/
+  useEffect(() => {
     // let dataSaved = localStorage.getItem(LOCAL_STORAGE.SAVE_TEMPLATE)
     // if(dataSaved) {
     //   setComponents(dataSaved)
     // }
-  }, [])
+  }, []);
 
   const componentPreview =
     components.length > 0 &&
@@ -26,7 +33,7 @@ export default function Consumer() {
         // omit first condition
         //create new element with available component
         const NewComponent = React.createElement(
-          component.name == "ComponentButton" ? ComponentButton : ComponentName,
+          component.name == "ComponentButton" ? ButtonComponent : TextComponent,
           {
             key: component.id,
             name: component.name,
@@ -49,14 +56,15 @@ export default function Consumer() {
   const handleBack2Admin = () => {
     router.push("/admin");
   };
-  
+
   return (
     <div>
       <Button
         shape="round"
         style={{ background: "#cececece", margin: "0.5rem" }}
         onClick={handleBack2Admin}
-      ><ArrowLeftOutlined />
+      >
+        <ArrowLeftOutlined />
         Back to Admin
       </Button>
       <div className="content" style={{ justifyContent: "center" }}>
