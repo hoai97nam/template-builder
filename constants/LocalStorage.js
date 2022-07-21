@@ -1,0 +1,3 @@
+export const LOCAL_STORAGE = {
+  SAVE_TEMPLATE: "SAVE_TEMPLATE",
+};
