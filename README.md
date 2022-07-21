@@ -54,6 +54,26 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - ✔ Show designed template
 - ✔ Back to admin page button
 
+#### Screenshoots
+
+![index/home page](https://github.com/hoai97nam/template-builder/blob/main/images/index.png)
+UI from home page, click on admin to navigate to admin page
+![admin page](https://github.com/hoai97nam/template-builder/blob/main/images/admin.png)
+- UI from `admin` page, most main feature from this page. 
+- Admin can drag and drop to design template
+- Use buttons from header to interact to template
+
+![admin text](https://github.com/hoai97nam/template-builder/blob/main/images/admin-text.png)
+- Edit text by click on component
+- Text will show instantly admin type in input field
+![amdin button](https://github.com/hoai97nam/template-builder/blob/main/images/admin-button.png)
+- Change button text 
+- Change alert message
+- Delete current component
+![consumer page](https://github.com/hoai97nam/template-builder/blob/main/images/consumer.png)
+- Show full template that designed before
+- Back to admin page to continue or interact to template with header button
+
 ## What I used
 
 ### Libraries or 3rd party
